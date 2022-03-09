@@ -1,0 +1,51 @@
+{
+    "processDescription": {
+        "process": {
+            "id": "dpm2",
+            "title": "dpm2",
+            "owsContext": {
+                "offering": {
+                    "content": {
+                        "href": "https://raw.githubusercontent.com/zx128/dpm2-cwl/devel/dpm2.cwl"
+                    }
+                }
+            },
+            "abstract": "Application Package for DPM2",
+            "keywords": ["dpm2"],
+            "inputs": [
+                {
+                    "id": "parameters",
+                    "title": "Parameter File",
+                    "input": {
+                        "literalDataDomains": [{
+                            "dataType": {
+                                "name": "File"
+                            }
+                        }]
+                    }
+                }
+            ],
+            "outputs": [{
+                "id": "output",
+                "title": "stdout",
+                "output": {
+                    "formats": [{
+                        "mimeType": "text/*",
+                        "default": true
+                    }]
+                }
+            }]
+        },
+        "processVersion": "0.0.6",
+        "jobControlOptions": [
+            "async-execute"
+        ],
+        "outputTransmission": [
+            "reference"
+        ]
+    },
+    "immediateDeployment": true,
+    "executionUnit": [{
+        "href": "docker://hysds1/dpm2:20220221"
+    }]
+}
